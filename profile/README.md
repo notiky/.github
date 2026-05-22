@@ -32,37 +32,35 @@ Decisions end up in Slack threads, Notion pages, and Linear tickets — without 
 
 ## How it works
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/notiky/.github/main/docs/assets/showcase/architecture-engine.png" alt="Notiky engine — inputs through capture, compose, execute to outputs" width="100%">
-</p>
+```
+  Inputs                    Engine                         Outputs
+  -------                   ------                         -------
+  customer calls      -->   capture & reason        -->    decisions
+  meeting transcripts       compose                 -->    CLAUDE.md / .cursor/rules
+  code repos                execute (MCP, daemon)   -->    ship plans
+  Linear / Slack                                      -->    live MCP context
+```
 
-Every signal flows through the same engine — reasoned in conversations, captured as decisions, composed into context packs, delivered to agents.
+```
+Capture  -->  Analyze  -->  Decide  -->  Update  -->  Deliver
+```
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/notiky/.github/main/docs/assets/showcase/product-loop.png" alt="Capture, analyze, decide, update, deliver" width="100%">
-</p>
-
-- **Capture** — meetings, repos, and conversations land as structured signals
-- **Analyze** — new inputs checked against existing decisions and constraints
-- **Decide** — approve, modify, or reject; rationale and evidence stay attached
-- **Update** — specs, `CLAUDE.md`, context packs, and roadmap reflect the new state
-- **Deliver** — agents and teammates get current context at session start
+- **Capture** — meetings, repos, conversations as structured signals
+- **Analyze** — check new inputs against existing decisions
+- **Decide** — version decisions with rationale and evidence
+- **Update** — regenerate specs, artifacts, roadmap
+- **Deliver** — push context to agents and teammates
 
 ---
 
 ## Features
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/notiky/.github/main/docs/assets/showcase/capabilities-bento.png" alt="Notiky capabilities" width="100%">
-</p>
-
-- Typed decision/hypothesis graph with supersession and contradiction detection
-- Artifact generation — `CLAUDE.md`, `.cursor/rules`, `AGENTS.md`, skills files
-- Static-first artifacts; MCP for live context in Cursor, Claude Code, and Codex
-- Session capture from coding agent transcripts
-- Ship plans and tasks with full decision context
-- Linear and Jira mirroring; meeting imports (Granola, Otter.ai, Google Meet)
-- Team workspaces with shared decision history
+- Decision/hypothesis graph (Postgres + pgvector)
+- Artifacts: `CLAUDE.md`, `.cursor/rules`, `AGENTS.md`, skills
+- MCP for Cursor, Claude Code, Codex
+- Session capture from agent transcripts
+- Linear / Jira mirroring; Granola, Otter, Google Meet imports
+- Team workspaces
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/notiky/.github/main/docs/assets/integrations/logo-cursor.png" alt="Cursor" height="28">
@@ -91,9 +89,9 @@ See [notiky-cli](https://github.com/notiky/notiky-cli) for details.
 ## Getting started
 
 1. Sign up at [notiky.com](https://notiky.com)
-2. Run `notiky setup` to connect your machine
+2. Run `notiky setup`
 3. Add Notiky MCP in Cursor or Claude Code
-4. Capture a session or import a meeting transcript
+4. Capture a session or import a transcript
 
 ---
 
