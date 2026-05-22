@@ -22,9 +22,7 @@ const svg = `
 <svg width="${W}" height="${H}" xmlns="http://www.w3.org/2000/svg">
   <rect width="${W}" height="${H}" fill="#05070b"/>
   <rect x="0" y="0" width="${W}" height="4" fill="#C9A84C"/>
-  <text x="120" y="175" fill="#faf6e6" font-family="system-ui, -apple-system, sans-serif" font-size="42" font-weight="700">The product engineering brain</text>
-  <text x="120" y="225" fill="rgba(250,246,230,0.55)" font-family="system-ui, -apple-system, sans-serif" font-size="22">Persistent product context for AI coding workflows</text>
-  <text x="${W - 48}" y="${H - 32}" text-anchor="end" fill="rgba(250,246,230,0.3)" font-family="ui-monospace, monospace" font-size="14">notiky.com</text>
+  <text x="120" y="210" fill="#faf6e6" font-family="system-ui, -apple-system, sans-serif" font-size="48" font-weight="800" letter-spacing="-0.02em">The product engineering brain</text>
 </svg>`;
 
 const logoBuf = await readFile(logoPath);
@@ -32,7 +30,7 @@ const logoPng = await sharp(logoBuf).resize(64, 64).png().toBuffer();
 
 const base = sharp(Buffer.from(svg)).png();
 const composed = await base
-  .composite([{ input: logoPng, top: 130, left: 40 }])
+  .composite([{ input: logoPng, top: 168, left: 40 }])
   .png({ compressionLevel: 9 })
   .toBuffer();
 
