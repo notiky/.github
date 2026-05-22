@@ -1,13 +1,13 @@
 <p align="center">
   <a href="https://notiky.com">
-    <img src="https://raw.githubusercontent.com/notiky/.github/main/docs/assets/banner.svg" alt="Notiky — The product engineering brain" width="100%">
+    <img src="https://raw.githubusercontent.com/notiky/.github/main/docs/assets/banner.png" alt="Notiky — The product engineering brain" width="100%">
   </a>
 </p>
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/notiky/.github/main/docs/assets/logo-plain-dark.svg">
-    <img src="https://raw.githubusercontent.com/notiky/.github/main/docs/assets/logo-plain-light.svg" alt="Notiky" width="120">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/notiky/.github/main/docs/assets/logo-dark.png">
+    <img src="https://raw.githubusercontent.com/notiky/.github/main/docs/assets/logo-light.png" alt="Notiky" width="160">
   </picture>
 </p>
 
@@ -30,7 +30,7 @@ AI coding tools made you 10x faster at writing code. But **keeping your product 
 **Notiky** is the persistent product brain — one cycle that captures the *why* behind every decision and feeds it back to Cursor, Claude Code, Codex, and your team.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/notiky/.github/main/docs/assets/hero-screenshot.svg" alt="Notiky workspace — decisions, artifacts, and MCP context" width="90%">
+  <img src="https://raw.githubusercontent.com/notiky/.github/main/docs/assets/hero-screenshot.png" alt="Notiky workspace — decisions, artifacts, and MCP context" width="90%">
 </p>
 
 ---
@@ -79,11 +79,11 @@ Tasks flow to **Linear** and **Jira** with full context. Meeting notes from **Gr
 Invite co-founders, PMs, designers, and engineers. Everyone sees the same decisions, the same context, the same product brain.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/notiky/.github/main/docs/assets/integrations/logo-cursor.svg" alt="Cursor" height="28">
+  <img src="https://raw.githubusercontent.com/notiky/.github/main/docs/assets/integrations/logo-cursor.png" alt="Cursor" height="28">
   &nbsp;&nbsp;
-  <img src="https://raw.githubusercontent.com/notiky/.github/main/docs/assets/integrations/logo-claude.svg" alt="Claude" height="28">
+  <img src="https://raw.githubusercontent.com/notiky/.github/main/docs/assets/integrations/logo-claude.png" alt="Claude" height="28">
   &nbsp;&nbsp;
-  <img src="https://raw.githubusercontent.com/notiky/.github/main/docs/assets/integrations/linear-short.svg" alt="Linear" height="28">
+  <img src="https://raw.githubusercontent.com/notiky/.github/main/docs/assets/integrations/linear-short.png" alt="Linear" height="28">
 </p>
 
 ---
