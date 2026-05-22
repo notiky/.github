@@ -1,6 +1,6 @@
 # Notiky — Agent Instructions
 
-Notiky is the **product engineering brain** — a persistent decision/hypothesis/insight graph that feeds context to Cursor, Claude Code, Codex, and your team. The AI workspace where products are built, from first idea to scale.
+Notiky is the **product engineering brain** — persistent decisions, hypotheses, and artifacts for teams building with AI agents.
 
 ## Public repositories
 

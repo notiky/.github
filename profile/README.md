@@ -5,15 +5,12 @@
 </p>
 
 <p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/notiky/.github/main/docs/assets/logo-dark.png">
-    <img src="https://raw.githubusercontent.com/notiky/.github/main/docs/assets/logo-light.png" alt="Notiky" width="160">
-  </picture>
+  <img src="https://raw.githubusercontent.com/notiky/.github/main/docs/assets/logo-boxed.png" alt="Notiky" width="72">
 </p>
 
 <p align="center">
   <strong>The product engineering brain</strong><br>
-  <em>The AI workspace where products are built — from first idea to scale</em>
+  Persistent decisions, hypotheses, and artifacts for teams building with AI agents.
 </p>
 
 <p align="center">
@@ -25,58 +22,47 @@
 
 ---
 
-AI coding tools made you 10x faster at writing code. But **keeping your product coherent** is still chaos. Decisions live in your head, context scatters across ChatGPT threads, and every new AI session starts from scratch.
-
-**Notiky** is the persistent product brain — one cycle that captures the *why* behind every decision and feeds it back to Cursor, Claude Code, Codex, and your team.
+Decisions end up in Slack threads, Notion pages, and Linear tickets — without the reasoning attached. Agent sessions reset. `CLAUDE.md` goes stale. Notiky keeps product context in one graph and pushes it back to your tools.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/notiky/.github/main/docs/assets/hero-screenshot.png" alt="Notiky workspace — decisions, artifacts, and MCP context" width="90%">
+  <img src="https://raw.githubusercontent.com/notiky/.github/main/docs/assets/hero-screenshot.png" alt="Notiky workspace" width="90%">
 </p>
 
 ---
 
 ## How it works
 
-```
-Brainstorm  →  Decisions  →  Ship Plan  →  Artifacts & Tasks
-     ↑_______________________________________________________|
-                    context compounds
-```
+<p align="center">
+  <img src="https://raw.githubusercontent.com/notiky/.github/main/docs/assets/showcase/architecture-engine.png" alt="Notiky engine — inputs through capture, compose, execute to outputs" width="100%">
+</p>
 
-1. **Brainstorm** with an AI co-founder that challenges your thinking, runs market research, and drills into specifics — not a yes-man chatbot
-2. **Decisions** are captured as structured objects: who decided, when, why, what was rejected, what evidence was used
-3. **Ship plans** convert brainstorms into actionable tasks with full reasoning chains
-4. **Artifacts** are auto-generated: `CLAUDE.md`, `.cursor/rules`, design systems, API docs, skills files
+Every signal flows through the same engine — reasoned in conversations, captured as decisions, composed into context packs, delivered to agents.
 
-The loop closes. The 100th session is dramatically better than the 1st because context compounds.
+<p align="center">
+  <img src="https://raw.githubusercontent.com/notiky/.github/main/docs/assets/showcase/product-loop.png" alt="Capture, analyze, decide, update, deliver" width="100%">
+</p>
+
+- **Capture** — meetings, repos, and conversations land as structured signals
+- **Analyze** — new inputs checked against existing decisions and constraints
+- **Decide** — approve, modify, or reject; rationale and evidence stay attached
+- **Update** — specs, `CLAUDE.md`, context packs, and roadmap reflect the new state
+- **Deliver** — agents and teammates get current context at session start
 
 ---
 
 ## Features
 
-### Decision & hypothesis graph
-Every decision is a first-class object with full provenance. Searchable forever. Supersession chains, contradiction detection, and domain routing — not text buried in chat.
+<p align="center">
+  <img src="https://raw.githubusercontent.com/notiky/.github/main/docs/assets/showcase/capabilities-bento.png" alt="Notiky capabilities" width="100%">
+</p>
 
-### Artifact generation
-Auto-generates the files your coding tools consume:
-- `CLAUDE.md` / `.cursorrules` / `.cursor/rules/`
-- Design systems and UI standards
-- API documentation
-- Skills files
-
-**Static-first, MCP-enhanced.** Artifacts always work as plain files. If the server is down, your coding tools still have context.
-
-### MCP server
-Delivers live product context to **Cursor**, **Claude Code**, and **Codex** mid-session. Your IDE's AI knows what the product is, what was decided, and what changed — without copy-pasting.
-
-### Session capture
-Import transcripts from coding agent sessions. Decisions and insights extracted into the graph automatically — cross-session memory that lives outside the IDE.
-
-### Integrations
-Tasks flow to **Linear** and **Jira** with full context. Meeting notes from **Granola**, **Otter.ai**, and **Google Meet** feed customer intelligence back into decisions.
-
-### Team workspace
-Invite co-founders, PMs, designers, and engineers. Everyone sees the same decisions, the same context, the same product brain.
+- Typed decision/hypothesis graph with supersession and contradiction detection
+- Artifact generation — `CLAUDE.md`, `.cursor/rules`, `AGENTS.md`, skills files
+- Static-first artifacts; MCP for live context in Cursor, Claude Code, and Codex
+- Session capture from coding agent transcripts
+- Ship plans and tasks with full decision context
+- Linear and Jira mirroring; meeting imports (Granola, Otter.ai, Google Meet)
+- Team workspaces with shared decision history
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/notiky/.github/main/docs/assets/integrations/logo-cursor.png" alt="Cursor" height="28">
@@ -91,30 +77,23 @@ Invite co-founders, PMs, designers, and engineers. Everyone sees the same decisi
 ## Quick install
 
 ```bash
-# macOS / Linux (Homebrew)
 brew install notiky/tap/notiky
-
-# macOS / Linux (install script)
-curl -fsSL https://get.notiky.com | bash
-
-# Windows (PowerShell)
-irm https://get.notiky.com/install.ps1 | iex
+# or: curl -fsSL https://get.notiky.com | bash
+notiky setup
 ```
 
-```bash
-notiky setup   # configure, authenticate, start the daemon
-```
+Windows: `irm https://get.notiky.com/install.ps1 | iex`
 
-See the [CLI repo](https://github.com/notiky/notiky-cli) for full installation options.
+See [notiky-cli](https://github.com/notiky/notiky-cli) for details.
 
 ---
 
 ## Getting started
 
-1. **Sign up** at [notiky.com](https://notiky.com) and create a workspace
-2. **Install the CLI** and run `notiky setup` — connects your machine and starts the daemon
-3. **Configure MCP** in Cursor or Claude Code so your IDE reads live product context from Notiky
-4. **Capture your first session** — decisions and insights flow into the graph from day one
+1. Sign up at [notiky.com](https://notiky.com)
+2. Run `notiky setup` to connect your machine
+3. Add Notiky MCP in Cursor or Claude Code
+4. Capture a session or import a meeting transcript
 
 ---
 
@@ -124,25 +103,21 @@ See the [CLI repo](https://github.com/notiky/notiky-cli) for full installation o
 |---|---|---|
 | **CLI + daemon** | [notiky-cli](https://github.com/notiky/notiky-cli) (Apache 2.0) | — |
 | **Schema + retrieval + MCP skeleton** | [notiky-brain](https://github.com/notiky) *(coming soon)* | — |
-| **Decision graph UI** | — | Web + desktop app |
+| **Decision graph UI** | — | Web + desktop |
 | **Artifact regeneration** | — | Brain pipeline |
-| **Consolidation + drift detection** | — | Nightly brain metabolism |
-| **Hosted MCP endpoint** | Self-host via CLI | Managed at notiky.com |
-
-The open substrate lets you inspect how Notiky works. The hosted product is where the brain runs at full depth.
+| **Consolidation + drift detection** | — | Nightly jobs |
+| **Hosted MCP** | Self-host via CLI | notiky.com |
 
 ---
 
 ## For coding agents
 
-Point your coding agent at this repo:
-
 ```
-Read https://github.com/notiky/.github/blob/main/llms.txt for Notiky product context, CLI install, and MCP overview.
+Read https://github.com/notiky/.github/blob/main/llms.txt
 ```
 
-- [AGENTS.md](https://github.com/notiky/.github/blob/main/AGENTS.md) — agent entry point
-- [llms.txt](https://github.com/notiky/.github/blob/main/llms.txt) — LLM-readable product summary
+- [AGENTS.md](https://github.com/notiky/.github/blob/main/AGENTS.md)
+- [llms.txt](https://github.com/notiky/.github/blob/main/llms.txt)
 
 ---
 
@@ -150,16 +125,12 @@ Read https://github.com/notiky/.github/blob/main/llms.txt for Notiky product con
 
 | Layer | Technology |
 |-------|-----------|
-| Frontend | Next.js (App Router), React, TypeScript |
-| Backend | Go (Chi router, sqlc) |
+| Frontend | Next.js, React, TypeScript |
+| Backend | Go (Chi, sqlc) |
 | Database | PostgreSQL + pgvector |
 | AI | Gemini, Claude, GPT via Vercel AI SDK |
-| Styling | Tailwind CSS + shadcn/ui |
 | Desktop | Electron |
 | Auth | BetterAuth |
-| Billing | Polar |
-
-Modular monolith with shared TypeScript packages across web and desktop. Decision graph stored in Postgres with bi-temporal versioning and vector search.
 
 ---
 
@@ -167,8 +138,8 @@ Modular monolith with shared TypeScript packages across web and desktop. Decisio
 
 | Repo | Description |
 |------|-------------|
-| [notiky-cli](https://github.com/notiky/notiky-cli) | Official CLI — connect, daemon, MCP |
-| [homebrew-tap](https://github.com/notiky/homebrew-tap) | Homebrew installation |
+| [notiky-cli](https://github.com/notiky/notiky-cli) | CLI, daemon, local MCP |
+| [homebrew-tap](https://github.com/notiky/homebrew-tap) | Homebrew install |
 | [notiky-brain](https://github.com/notiky) | Open-core substrate *(coming soon)* |
 
 ---
@@ -177,7 +148,6 @@ Modular monolith with shared TypeScript packages across web and desktop. Decisio
 
 - [Website](https://notiky.com)
 - [CLI](https://github.com/notiky/notiky-cli)
-- [Homebrew tap](https://github.com/notiky/homebrew-tap)
 - [Contributing](https://github.com/notiky/.github/blob/main/CONTRIBUTING.md)
 - [Security](https://github.com/notiky/.github/blob/main/SECURITY.md)
 
@@ -185,6 +155,6 @@ Modular monolith with shared TypeScript packages across web and desktop. Decisio
 
 ## License
 
-Notiky is proprietary software. Copyright 2026 Notiky. All rights reserved.
+Notiky is proprietary. Copyright 2026 Notiky.
 
-The [Notiky CLI](https://github.com/notiky/notiky-cli) is licensed under Apache 2.0.
+The [CLI](https://github.com/notiky/notiky-cli) is Apache 2.0.

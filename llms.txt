@@ -1,95 +1,84 @@
 # Notiky — LLM-Readable Product Summary
 
-> Factual overview for AI coding agents. No marketing claims beyond what the product ships.
+> Factual overview for AI coding agents.
 
 ## What Notiky is
 
-Notiky is the product engineering brain — the persistent context layer for teams who build software with AI agents. It is also the AI workspace where products are built, from first idea to scale.
+Notiky is the product engineering brain — a persistent decision/hypothesis/insight graph for teams building software with AI agents.
 
-Core primitive: a typed decision/hypothesis/insight graph with supersession, contradiction detection, and domain routing. Derivatives include ship plans, tasks, and coding-infrastructure artifacts.
+Core primitive: typed entities with supersession, contradiction detection, and domain routing. Derivatives include ship plans, tasks, and coding-infrastructure artifacts (`CLAUDE.md`, `.cursor/rules`, `AGENTS.md`, `SKILL.md`).
 
 Notiky is NOT an issue tracker (Linear/Jira handle execution; Notiky mirrors with context). Notiky is NOT a code editor (Cursor/Claude Code write code; Notiky feeds them product context).
 
 ## Problem it solves
 
-AI coding tools write code fast but have zero persistent context about product decisions, customer feedback, or prior sessions. Decisions scatter across Slack, Notion, Linear tickets, and founder memory. Every new agent session starts cold.
+Product context scatters across Slack, Notion, Linear, and agent sessions. `CLAUDE.md` goes stale. Each new coding session starts without prior decisions attached.
 
-Notiky captures the why behind every decision and serves it back via static artifacts and live MCP.
+Notiky stores decisions in Postgres (pgvector) and serves them via static artifacts and MCP.
 
-## Product cycle
+## Product loop
 
-```
-Brainstorm → Decisions → Ship Plan → Artifacts & Tasks
-     ↑___________________________________|
-              context compounds
-```
+Capture → Analyze → Decide → Update → Deliver
 
-1. Brainstorm — AI co-founder that challenges thinking, researches, drills into specifics
-2. Decisions — structured objects with provenance (who, when, why, rejected alternatives, evidence)
-3. Ship plans — actionable tasks with full reasoning chains
-4. Artifacts — CLAUDE.md, .cursor/rules, AGENTS.md, SKILL.md, design systems, API docs
+1. **Capture** — meetings, repos, conversations as structured signals
+2. **Analyze** — inputs checked against existing decisions and constraints
+3. **Decide** — versioned decisions with rationale and evidence
+4. **Update** — artifacts and specs regenerated from current graph state
+5. **Deliver** — context to Cursor, Claude Code, Codex via MCP and files
 
 ## Key features
 
-- Decision/hypothesis graph with bi-temporal versioning and vector search (Postgres + pgvector)
-- Artifact generation: static-first files regenerated from current decision state
-- MCP server: live product context injected into Cursor, Claude Code, Codex mid-session
-- Session capture: coding agent transcripts extracted into typed entities
-- Integrations: Linear, Jira (mirror with context), Granola, Otter.ai, Google Meet
-- Team workspace with domain-aware decision routing
+- Decision/hypothesis graph with bi-temporal versioning (Postgres + pgvector)
+- Artifact generation from current decision state (static-first, MCP-enhanced)
+- MCP server for Cursor, Claude Code, Codex
+- Session capture from coding agent transcripts
+- Integrations: Linear, Jira, Granola, Otter.ai, Google Meet
+- Team workspaces with shared decision history
 
 ## MCP overview
 
-Notiky ships an MCP server (HTTP+SSE) that coding agents connect to for:
+HTTP+SSE MCP server for:
 
 - Searching decisions and hypotheses
-- Reading current artifacts for a project
+- Reading project artifacts
 - Listing contradictions and supersession chains
 - Injecting session context at session start
 - Capturing new decisions from agent sessions
 
-Static artifacts (CLAUDE.md, .cursor/rules) work without MCP. MCP is an enhancement for live, always-current context.
-
-Configure via `notiky setup` and MCP token management (`notiky mcp tokens create`).
+Configure via `notiky setup` and `notiky mcp tokens create`.
 
 ## CLI commands
 
 ```bash
-brew install notiky/tap/notiky          # Homebrew install
-curl -fsSL https://get.notiky.com | bash  # Install script
-notiky setup                             # Configure, auth, start daemon
-notiky daemon status                     # Check daemon + detected agent CLIs
-notiky mcp serve                         # Serve MCP locally
-notiky mcp tokens create                 # Create MCP auth token
-notiky update                            # Upgrade CLI
+brew install notiky/tap/notiky
+curl -fsSL https://get.notiky.com | bash
+notiky setup
+notiky daemon status
+notiky mcp serve
+notiky mcp tokens create
+notiky update
 ```
 
-Supported agent CLIs auto-detected on PATH: claude, codex, gemini, openclaw, opencode, hermes, pi.
+Supported agent CLIs on PATH: claude, codex, gemini, openclaw, opencode, hermes, pi.
 
 ## Tech stack
 
-- Frontend: Next.js (App Router), React, TypeScript, Tailwind CSS, shadcn/ui
-- Backend: Go (Chi router, sqlc, gorilla/websocket)
-- Database: PostgreSQL 17 with pgvector (768-dim embeddings)
-- AI: Google Gemini (primary), Claude/GPT via OpenRouter, Vercel AI SDK
-- Desktop: Electron (shared packages with web)
-- Auth: BetterAuth (Google, GitHub, email OTP)
+- Frontend: Next.js, React, TypeScript, Tailwind, shadcn/ui
+- Backend: Go (Chi, sqlc, gorilla/websocket)
+- Database: PostgreSQL 17 + pgvector
+- AI: Gemini (primary), Claude/GPT via OpenRouter, Vercel AI SDK
+- Desktop: Electron
 
-Architecture: modular monolith. Go API + shared TS packages (core, views, ui) consumed by web and desktop.
+## Open vs hosted
 
-## Open vs hosted (D-009 open-core model)
-
-Open / inspectable today:
+Open / inspectable:
 - notiky-cli (Apache 2.0): CLI, daemon, local MCP
-- notiky-brain (coming soon, Apache 2.0): schema migrations, retrieval Go library, MCP skeleton, eval harness, protocol JSON schemas
+- notiky-brain (coming soon): schema, retrieval library, MCP skeleton, eval harness, protocol schemas
 
 Hosted only (notiky.com):
-- Consolidation orchestration (nightly RAPTOR, drift detection)
-- Artifact regeneration pipeline
-- Brain judge (contradiction surfacer with LLM judge)
-- Orchestrator and sandbox
+- Consolidation, artifact regeneration, drift detection, brain judge, orchestrator
 - Web app, desktop app, hosted MCP endpoint
-- Linear integration, pre-indexed library docs corpus
+- Linear integration, pre-indexed docs corpus
 
 ## Public repositories
 
@@ -107,5 +96,5 @@ Hosted only (notiky.com):
 
 ## License
 
-Notiky product: proprietary. Copyright 2026 Notiky. All rights reserved.
-Notiky CLI: Apache 2.0 (https://github.com/notiky/notiky-cli).
+Notiky product: proprietary. Copyright 2026 Notiky.
+Notiky CLI: Apache 2.0.
