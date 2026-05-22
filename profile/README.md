@@ -62,14 +62,6 @@ Capture  -->  Analyze  -->  Decide  -->  Update  -->  Deliver
 - Linear / Jira mirroring; Granola, Otter, Google Meet imports
 - Team workspaces
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/notiky/.github/main/docs/assets/integrations/logo-cursor.png" alt="Cursor" height="28">
-  &nbsp;&nbsp;
-  <img src="https://raw.githubusercontent.com/notiky/.github/main/docs/assets/integrations/logo-claude.png" alt="Claude" height="28">
-  &nbsp;&nbsp;
-  <img src="https://raw.githubusercontent.com/notiky/.github/main/docs/assets/integrations/linear-short.png" alt="Linear" height="28">
-</p>
-
 ---
 
 ## Quick install
