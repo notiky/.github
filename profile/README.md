@@ -1,24 +1,8 @@
-<p align="center">
-  <a href="https://notiky.com">
-    <img src="https://raw.githubusercontent.com/notiky/.github/main/docs/assets/banner.png" alt="Notiky — The product engineering brain" width="100%">
-  </a>
-</p>
+# Notiky
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/notiky/.github/main/docs/assets/logo-boxed.png" alt="Notiky" width="72">
-</p>
+**The product engineering brain** — persistent decisions, hypotheses, and artifacts for teams building with AI agents.
 
-<p align="center">
-  <strong>The product engineering brain</strong><br>
-  Persistent decisions, hypotheses, and artifacts for teams building with AI agents.
-</p>
-
-<p align="center">
-  <a href="https://notiky.com">Website</a> ·
-  <a href="https://github.com/notiky/notiky-cli">CLI</a> ·
-  <a href="https://github.com/notiky/.github/blob/main/AGENTS.md">Agents</a> ·
-  <a href="https://github.com/notiky/.github/blob/main/llms.txt">llms.txt</a>
-</p>
+[Website](https://notiky.com) · [CLI](https://github.com/notiky/notiky-cli) · [Agents](https://github.com/notiky/.github/blob/main/AGENTS.md) · [llms.txt](https://github.com/notiky/.github/blob/main/llms.txt)
 
 ---
 
